@@ -232,7 +232,8 @@ function footer(numberPage){
 //  tạo ra số lượng tiểu phân
 
 function chonGiaTriTuyY(tiLe) {
-    var mang = [0, 71, 35, 141, 247, 318]
+    // [0, 71, 35, 141, 247, 318]
+    var mang = [0 , 35 , 71 , 106, 141 , 177 , 247 , 283 , 318  ]
     // Tạo một số ngẫu nhiên từ 0 đến 100
     const ngauNhien = Math.random() * 100;
     let tongTiLe = 0;
@@ -248,9 +249,9 @@ function chonGiaTriTuyY(tiLe) {
   }
   
 function taotieupha(){
-  var parcticile0_3 = chonGiaTriTuyY([25, 25, 20, 15, 10,5])
-  var parcticile0_5 = chonGiaTriTuyY([35, 30, 20, 10, 5, 0])
-  var parcticile1_0 = chonGiaTriTuyY([70, 20, 10, 5, 0, 0])
+  var parcticile0_3 = chonGiaTriTuyY([26, 25, 10,10, 7 ,7, 5 , 5 , 5])
+  var parcticile0_5 = chonGiaTriTuyY([36, 30, 10,10, 5 ,5 , 2 , 2 , 0])
+  var parcticile1_0 = chonGiaTriTuyY([71, 20, 5 , 5, 2,2, 0,0, 0])
   return [parcticile0_3,parcticile0_5,parcticile1_0]
 }
 
