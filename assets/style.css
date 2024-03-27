@@ -1,0 +1,213 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #fff;
+    line-height: 1.0;
+}
+
+
+.component{
+    height: 1080px;
+    max-width: 771px;
+    margin: auto;
+    position: relative;
+}
+
+
+/* Phần header */
+.header{
+ font-weight: 600;
+ padding-top: 10px;
+}
+
+.header .print-time{
+    text-align: end ;
+    font-size: 15px;
+}
+
+.header .file-name{
+    font-size: 25px;
+    text-align: center;
+    padding: 5px;
+}
+
+.header .title{
+    display: flex;
+    justify-content: center;
+    font-size: 11px;
+}
+
+.title-item{
+    padding: 0 3px;
+}
+
+/* Phần content */
+
+.content-body table{
+    width: 100%;
+    font-size: 12px; 
+    line-height: 1.1; 
+}
+
+.content-body .row1{
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+
+.content-body .table__body td {
+    text-align: end;
+    padding-right: 5px;
+    font-style: italic;
+}
+
+.content-body .col1{
+   position: relative;
+   right: -10px;
+
+    
+}
+
+.content-body .space{
+    height:  4px;
+}
+
+
+/* phần footer */
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 25px;
+}
+
+.footer .status{
+    display: flex;
+    font-size: 12px;
+}
+
+.footer .status div{
+    margin-right: 6px;
+}
+
+.invalid{
+    text-decoration: line-through;
+}
+
+.footer .alarm{
+    text-decoration: underline;
+}
+
+.footer .alarm2{
+    font-weight: 900;
+}
+
+.footer .alarm3{
+    font-weight: 600;
+}
+
+.footer .user-and-page{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+/* Phần report */
+
+.title-report{
+    text-decoration: underline;
+    text-align: center;
+    padding: 15px;
+}
+
+
+.content-report table{
+    padding-bottom: 25px;
+}
+
+.content-report table td{
+    font-size: 13px;
+    font-weight: 540;
+}
+
+
+.table-report1{
+    padding: 0;
+}
+
+.table-report1 tr td:nth-child(1){
+    width: 100px;
+}
+
+
+.table-report1 tr td:nth-child(2){
+    width: 70px;
+    text-align: end;
+}
+
+.table-report1 tr td:nth-child(3){
+    width: 150px;
+    text-align: start;
+}
+
+
+.content-report .space{
+    height: 10px;
+}
+
+.table-report2{
+ text-align: center;
+}
+
+.table-report2 td{
+    padding-left: 3px;
+}
+
+.table-report2 tr td:nth-child(1){
+    width: 130px;
+    text-align: start;
+}
+
+.table-report2 tr th:nth-child(1){
+    width: 130px;
+    text-align: start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

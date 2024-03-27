@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thông tin thiết bị</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<h2>Nhập thông tin thiết bị</h2>
+
+<div action="/submit" method="post">
+    <label for="start_time">Thời điểm bắt đầu:</label><br>
+    <input type="datetime-local" id="start_time" name="start_time"><br><br>
+
+    <label for="end_time">Thời điểm kết thúc:</label><br>
+    <input type="datetime-local" id="end_time" name="end_time"><br><br>
+
+    <label for="print-time">Thời điểm in:</label><br>
+    <input type="datetime-local" id="print_time" name="print-time"><br><br>
+
+    <label for="device_name">Tên thiết bị:</label><br>
+    <input type="text" id="device_name" name="device_name"><br><br>
+
+    
+    <label for="device_name">Tên phiếu:</label><br>
+    <input type="text" id="report_name" name="report_name"><br><br>
+
+    <label for="failed_points">Tỉ lệ có tiểu phân (%):</label><br>
+    <input type="number" id="failed_percent" name="percentage" min="0" max="100" step="0.1"><br><br>
+
+    <button class="submit"> Gửi</button>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
