@@ -96,7 +96,7 @@ function covertTime(thoi_diem){
     if (gio > 12) {
         gio = gio - 12;
     }
-    var thoi_gian = ngay +'/' + thang +'/' + nam + ' ' + gio + ':' + phut + ':' + giay + ' ' + buoi;
+    var thoi_gian = ngay +'/' + thang +'/20' + nam + ' ' + gio + ':' + phut + ':' + giay + ' ' + buoi;
     return thoi_gian
 }
 
