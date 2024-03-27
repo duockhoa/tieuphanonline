@@ -7,5 +7,9 @@ h1 {
 }
 
 .form{
+    max-width:720px ;
     text-align: start;
+    border: 1px solid black;
+    margin: auto;
+    padding: 20px;
 }
