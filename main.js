@@ -87,7 +87,7 @@ function covertTime(thoi_diem){
     var phut = thoi_diem.getMinutes();
     var giay = thoi_diem.getSeconds();
     ngay = ngay < 10 ? '0' + ngay : ngay;
-    thang = thang < 10 ? '0' + thang : thang;
+    // thang = thang < 10 ? '0' + thang : thang;
     nam = nam < 10 ? '0' + nam : nam;
     gio = gio < 10 ? '0' + gio : gio;
     phut = phut < 10 ? '0' + phut : phut;
