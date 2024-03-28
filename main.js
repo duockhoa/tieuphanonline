@@ -285,7 +285,7 @@ function report(maxmin, printTime , device_name, report_name ,time , numberMomen
     <div class="component">
     <header class="header">
         <div class="print-time">${printTime}</div>
-        <div class="file-name">${device_name}</div>
+        <div class="file-name">${report_name}</div>
         <div class="title-report"> Statistics: ${maxmin.startTime} to ${maxmin.endTime}   </div>
     </header>
     <div class="content-report">
