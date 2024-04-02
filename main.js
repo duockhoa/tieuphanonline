@@ -319,16 +319,7 @@ function report(maxmin, printTime , device_name, report_name ,time , numberMomen
 
         <table class="table-report2">
             <tr>
-                <th>Alarm Typle</th>
-                <th>Samples in Alarm</th>
-                <th>Sample Time in Alarm</th>
-                <th>Percent Time in Alarm</th>
-            </tr>
-            <tr>
-                <td>Laser Error</td>
-                <td>${numberMoment}</td>
-                <td>${time}</td>
-                <td>100%</td>
+                <th>No alarms generated.</th>
             </tr>
         </table>
         <h4>Filter: None</h4>
