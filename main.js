@@ -26,7 +26,10 @@ function read(){
     // Tạo báo cáo chung
 
     var htmlsReport = report(ojContent.maxmin , printTime , device_name, report_name, oj.time, oj.numberMoment, oj.numberPage)
+     
+    // thêm title
 
+    addTitle(report_name,device_name)
     
 
     // Render
@@ -336,4 +339,10 @@ function report(maxmin, printTime , device_name, report_name ,time , numberMomen
     `
 
     return html
+}
+
+function addTitle(reportName,deviceName){
+    let title = reportName + " "+  deviceName
+   let titleElement = document.querySelector('title')
+   titleElement.innerText = title
 }
