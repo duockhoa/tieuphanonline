@@ -35,3 +35,12 @@ h1 {
     cursor: pointer;
     background-color: #333;
 }
+
+.form select{
+    display: block;
+    padding: 8px;
+    font-size: 20px;
+    min-width: 290px;
+    margin: 8px 0px;
+}
+

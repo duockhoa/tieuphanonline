@@ -1,3 +1,5 @@
+
+
 *{
     padding: 0;
     margin: 0;
@@ -7,6 +9,7 @@
 html{
     background-color: #fff;
     line-height: 1.0;
+   font-family: serif;
 }
 
 
@@ -56,13 +59,13 @@ html{
 .content-body .row1{
     font-weight: 600;
     text-decoration: underline;
+    text-align: start;
 }
 
 
 .content-body .table__body td {
     text-align: end;
     padding-right: 5px;
-    font-style: italic;
 }
 
 .content-body .col1{
@@ -71,6 +74,8 @@ html{
 
     
 }
+
+
 
 .content-body .space{
     height:  4px;
@@ -100,12 +105,21 @@ html{
     text-decoration: line-through;
 }
 
+.footer .laser{
+    font-style: italic;
+}
+
 .footer .alarm{
     text-decoration: underline;
 }
 
+.footer .alarm0{
+    font-style: italic;
+}
+
 .footer .alarm2{
-    font-weight: 900;
+    font-weight: 800;
+    font-style: italic;
 }
 
 .footer .alarm3{
@@ -145,6 +159,7 @@ html{
 
 .table-report1 tr td:nth-child(1){
     width: 100px;
+    text-align: start;
 }
 
 
@@ -177,13 +192,15 @@ html{
 }
 
 .table-report2 tr th:nth-child(1){
-    width: 130px;
+    width: 330px;
     text-align: start;
 }
 
 h4{
     text-align: start;
 }
+
+
 
 
 

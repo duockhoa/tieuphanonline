@@ -27,7 +27,10 @@ function read(){
     // Tạo báo cáo chung
 
     var htmlsReport = report(ojContent.maxmin , printTime , device_name, report_name, oj.time, oj.numberMoment, oj.numberPage)
+     
+    // thêm title
 
+    addTitle(report_name,device_name)
     
 
     // Render
@@ -88,9 +91,9 @@ function covertTime(thoi_diem){
     var phut = thoi_diem.getMinutes();
     var giay = thoi_diem.getSeconds();
     ngay = ngay < 10 ? '0' + ngay : ngay;
-    // thang = thang < 10 ? '0' + thang : thang;
+    thang = thang < 10 ? '0' + thang : thang;
     nam = nam < 10 ? '0' + nam : nam;
-    gio = gio < 10 ? '0' + gio : gio;
+    // gio = gio < 10 ? '0' + gio : gio;
     phut = phut < 10 ? '0' + phut : phut;
     giay = giay < 10 ? '0' + giay : giay;
     var buoi = gio >= 12 ? 'CH' : 'SA';
@@ -233,7 +236,8 @@ function footer(numberPage){
 //  tạo ra số lượng tiểu phân
 
 function chonGiaTriTuyY(tiLe) {
-    var mang = [0, 71, 35, 141, 247, 318]
+    // [0, 71, 35, 141, 247, 318]
+    var mang = [0 , 35 , 71 , 106, 141 , 177 , 247 , 283 , 318  ]
     // Tạo một số ngẫu nhiên từ 0 đến 100
     const ngauNhien = Math.random() * 100;
     let tongTiLe = 0;
@@ -249,9 +253,9 @@ function chonGiaTriTuyY(tiLe) {
   }
   
 function taotieupha(){
-  var parcticile0_3 = chonGiaTriTuyY([25, 25, 20, 15, 10,5])
-  var parcticile0_5 = chonGiaTriTuyY([35, 30, 20, 10, 5, 0])
-  var parcticile1_0 = chonGiaTriTuyY([70, 20, 10, 5, 0, 0])
+  var parcticile0_3 = chonGiaTriTuyY([26, 25, 10,10, 7 ,7, 5 , 5 , 5])
+  var parcticile0_5 = chonGiaTriTuyY([36, 30, 10,10, 5 ,5 , 2 , 2 , 0])
+  var parcticile1_0 = chonGiaTriTuyY([71, 20, 5 , 5, 2,2, 0,0, 0])
   return [parcticile0_3,parcticile0_5,parcticile1_0]
 }
 
@@ -285,7 +289,7 @@ function report(maxmin, printTime , device_name, report_name ,time , numberMomen
     <div class="component">
     <header class="header">
         <div class="print-time">${printTime}</div>
-        <div class="file-name">${device_name}</div>
+        <div class="file-name">${report_name}</div>
         <div class="title-report"> Statistics: ${maxmin.startTime} to ${maxmin.endTime}   </div>
     </header>
     <div class="content-report">
@@ -319,16 +323,7 @@ function report(maxmin, printTime , device_name, report_name ,time , numberMomen
 
         <table class="table-report2">
             <tr>
-                <th>Alarm Typle</th>
-                <th>Samples in Alarm</th>
-                <th>Sample Time in Alarm</th>
-                <th>Percent Time in Alarm</th>
-            </tr>
-            <tr>
-                <td>Laser Error</td>
-                <td>${numberMoment}</td>
-                <td>${time}</td>
-                <td>100%</td>
+                <th>No alarms generated.</th>
             </tr>
         </table>
         <h4>Filter: None</h4>
@@ -345,4 +340,10 @@ function report(maxmin, printTime , device_name, report_name ,time , numberMomen
     `
 
     return html
+}
+
+function addTitle(reportName,deviceName){
+    let title = reportName + " "+  deviceName
+   let titleElement = document.querySelector('title')
+   titleElement.innerText = title
 }
