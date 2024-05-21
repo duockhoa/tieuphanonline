@@ -3,9 +3,11 @@ submit.addEventListener('click', read)
 
 function read(){
     let startTime= new Date(document.querySelector('#start_time').value)
-    startTime.setSeconds(startTime.getSeconds() + Math.floor(Math.random() * 60) + 1)
-    let endTime = new Date(document.querySelector('#end_time').value)
+    startTime.setSeconds(startTime.getSeconds() + Math.floor(Math.random() * 60))
+    let endTime = new Date(document.querySelector('#end_time').value )
+    endTime.setSeconds(endTime.getSeconds() + Math.floor(Math.random() * 60))
     let printTime = new Date(document.querySelector('#print_time').value)
+    printTime.setSeconds(printTime.getSeconds() + Math.floor(Math.random() * 60))
     printTime = covertTime(printTime)
     let device_name = document.querySelector('#device_name').value
     let failed_percent = document.querySelector('#failed_percent').value
@@ -45,21 +47,16 @@ function read(){
 
 
     
- 
-
-
-
-
 
 
 function calTime(startTime,endTime){
     let array= []
     for(var i = 1 ; i < 3000; i ++) {
-        startTime.setMinutes(startTime.getMinutes() + 1)
-        if(startTime >= endTime ){
+        endTime.setMinutes(endTime.getMinutes() - 1)
+        if(endTime < startTime ){
          break    
         }
-        var time = covertTime(startTime)
+        var time = covertTime(endTime)
         array.push(time)
     }
     let numberMoment = array.length
