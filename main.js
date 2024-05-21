@@ -8,6 +8,7 @@ function read(){
     endTime.setSeconds(endTime.getSeconds() + Math.floor(Math.random() * 60))
     let printTime = new Date(document.querySelector('#print_time').value)
     printTime.setSeconds(printTime.getSeconds() + Math.floor(Math.random() * 60))
+    printTime.setSeconds(printTime.getSeconds() + Math.floor(Math.random() * 60) + 1)
     printTime = covertTime(printTime)
     let device_name = document.querySelector('#device_name').value
     let failed_percent = document.querySelector('#failed_percent').value
