@@ -381,9 +381,9 @@ function calculateStandardDeviation(array) {
 
 function generateValue() {
     const randNum = Math.random();
-    if (randNum < 0.992) {
+    if (randNum < 0.998) {
       return 0;
-    } else if (randNum < 0.996) {
+    } else if (randNum < 0.999) {
       return 1;
     } else {
       return -1;
