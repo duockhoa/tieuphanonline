@@ -54,7 +54,7 @@ function calTime(startTime,endTime){
     let array= []
     for(var i = 1 ; i < 3000; i ++) {
         endTime.setMinutes(endTime.getMinutes() - 1)
-        endTime.setSeconds(startTime.getSeconds() + generateValue())
+        endTime.setSeconds(endTime.getSeconds() + generateValue())
         if(endTime < startTime ){
          break    
         }
@@ -381,9 +381,9 @@ function calculateStandardDeviation(array) {
 
 function generateValue() {
     const randNum = Math.random();
-    if (randNum < 0.8) {
+    if (randNum < 0.992) {
       return 0;
-    } else if (randNum < 0.9) {
+    } else if (randNum < 0.996) {
       return 1;
     } else {
       return -1;
