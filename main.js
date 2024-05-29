@@ -28,7 +28,7 @@ function read(){
 
     // Tạo báo cáo chung
 
-    var htmlsReport = report(ojContent.maxmin , printTime , device_name, report_name, oj.time, oj.numberMoment, oj.numberPage)
+    var htmlsReport = report(ojContent.maxmin , printTime , device_name, report_name, oj.time, oj.numberMoment, oj.numberPage, ojContent)
      
     // thêm title
 
@@ -121,7 +121,7 @@ function header(printTime,report_name , device_name, numberPage){
             <div class="file-name">${report_name}</div>
             <div class="title">
                 <div class="title-item">${device_name}</div>
-                <div class="title-item">AirNet-310-4   </div>
+                <div class="title-item">: AirNet-310-4</div>
                 <div class="title-item">Normalized Counts</div>
             </div>
         </header>
@@ -159,7 +159,7 @@ function content(oj ,failed_percent){
         } else {var element = [0,0,0] }
         numberPracticiles.push(element)
     }
-
+    let sumParcticiles = numberPracticiles.map(subArray => subArray.reduce((acc, curr) => acc + curr, 0))
     var maxmin = xulymang(numberPracticiles)
 
     var htmls = []
@@ -191,6 +191,7 @@ function content(oj ,failed_percent){
     return {
         htmls: htmls,
         maxmin: maxmin,
+        array: sumParcticiles,
     }
 
 }
@@ -281,13 +282,13 @@ function xulymang(mang){
 
 
 
-function report(maxmin, printTime , device_name, report_name ,time , numberMoment ,numberPage){
+function report(maxmin, printTime , device_name, report_name ,time , numberMoment ,numberPage,ojContent){
     html = `
     <div class="component">
     <header class="header">
         <div class="print-time">${printTime}</div>
         <div class="file-name">${report_name}</div>
-        <div class="title-report"> Statistics: ${maxmin.startTime} to ${maxmin.endTime}   </div>
+        <div class="title-report"> Statistics: ${maxmin.endTime} to ${maxmin.startTime}   </div>
     </header>
     <div class="content-report">
         <table class="table-report1">
@@ -302,8 +303,14 @@ function report(maxmin, printTime , device_name, report_name ,time , numberMomen
             <tr class="space"></tr>
             <tr>
                 <td>Average(Mean)</td>
-                <td>0</td>
+                <td>${calculateMean(ojContent.array)}</td>
             </tr>
+            
+            <tr>
+            <td>Standard Deviation</td>
+            <td>${calculateStandardDeviation(ojContent.array)}</td>
+            </tr>
+            
             <tr class="space"></tr>
             <tr>
                 <td>Minumum</td>
@@ -343,4 +350,29 @@ function addTitle(reportName,deviceName){
     let title = reportName + " "+  deviceName
    let titleElement = document.querySelector('title')
    titleElement.innerText = title
+}
+
+
+// mảng tổng
+function sumPraticiles(array){
+    // Khởi tạo
+let result = array.map(subArray => subArray.reduce((acc, curr) => acc + curr, 0));
+
+// In kết quả
+console.log(result);
+
+}
+
+
+function calculateMean(array) {
+    const sum = array.reduce((acc, val) => acc + val, 0);
+    return  Math.round(sum / array.length);
+}
+
+// Hàm tính độ lệch chuẩn của mảng
+function calculateStandardDeviation(array) {
+    const mean = calculateMean(array);
+    const squaredDifferences = array.map(val => (val - mean) ** 2);
+    const meanSquaredDifference = calculateMean(squaredDifferences);
+    return Math.round(Math.sqrt(meanSquaredDifference));
 }
