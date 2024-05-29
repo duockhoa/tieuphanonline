@@ -54,6 +54,7 @@ function calTime(startTime,endTime){
     let array= []
     for(var i = 1 ; i < 3000; i ++) {
         endTime.setMinutes(endTime.getMinutes() - 1)
+        endTime.setSeconds(startTime.getSeconds() + generateValue())
         if(endTime < startTime ){
          break    
         }
@@ -65,7 +66,8 @@ function calTime(startTime,endTime){
      if(numberMoment < 56) {
        var  numberPage = 1
      } else {  var numberPage = Math.floor(numberMoment/55) +1 }
-  
+     
+     console.log(numberMoment)
 
     let oj = {
         listMoment: array,
@@ -302,7 +304,7 @@ function report(maxmin, printTime , device_name, report_name ,time , numberMomen
             </tr>
             <tr class="space"></tr>
             <tr>
-                <td>Average(Mean)</td>
+                <td>Average (Mean)</td>
                 <td>${calculateMean(ojContent.array)}</td>
             </tr>
             
@@ -376,3 +378,14 @@ function calculateStandardDeviation(array) {
     const meanSquaredDifference = calculateMean(squaredDifferences);
     return Math.round(Math.sqrt(meanSquaredDifference));
 }
+
+function generateValue() {
+    const randNum = Math.random();
+    if (randNum < 0.8) {
+      return 0;
+    } else if (randNum < 0.9) {
+      return 1;
+    } else {
+      return -1;
+    }
+  }
